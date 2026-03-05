@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cardo } from "next/font/google";
+import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -7,18 +7,19 @@ import { Footer } from "@/components/Footer";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const cardo = Cardo({
-  weight: ["400", "700"],
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-cardo",
+  variable: "--font-dm-sans",
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Outrig | Secure RV, Boat & Vehicle Storage + Expert RV Service",
+  title: "Outrig | Your RV's Home Base",
   description:
-    "Nationwide secure storage for RVs, boats, and vehicles with on-site RV service and repair. 20+ locations across the US. Find your nearest Outrig facility today.",
+    "Secure storage, expert service, and real amenities for RV owners — all in one place. 20+ locations nationwide.",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cardo.variable}`}>
+      <body className={`${inter.variable} ${dmSans.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />
